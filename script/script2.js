@@ -2,7 +2,7 @@
 let message = "Palmo";
 let message2 = 'Hello, Palmo';
 alert(`Hello, ${message}`);
-alert(message2)
+alert(message2);
 //classwork quest2
 let name = prompt("Как вас зовут?", "");
 alert(`Вас зовут ${name}`);
