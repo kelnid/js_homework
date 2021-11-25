@@ -1,4 +1,4 @@
-let n = 500;
+const n = 500;
 
 for (let i = 2; i <= n ; i++) {
     let isPrime = true;
