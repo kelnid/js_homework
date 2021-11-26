@@ -1,34 +1,24 @@
-const num1 = +prompt('Введите первое число')
+const firstNum = +prompt('Введите первое число');
+const symbol = prompt('Введите действие /, *, -, +');
+const secondNum = +prompt('Введите второе число');
+const numIsCorrect = (firstNum !== '' && !isNaN(firstNum)) && (secondNum !== '' && !isNaN(firstNum));
 
-const action = prompt('Введите один из знаков +, -, *, /')
-
-const num2 = +prompt('Введите второе число');
-let result = 0;
-if(num1 || num2 || action) {
-    if(isNaN(num1) || isNaN(num2)) {
-        alert('Одно из ведённых значений не является числом')
+if (numIsCorrect) {
+    if (symbol === '+') {
+        alert(firstNum + secondNum);
+    } else if (symbol === '-') {
+        alert(firstNum - secondNum);
+    } else if (symbol === '*') {
+        alert(firstNum * secondNum);
+    } else if (symbol === '/') {
+        if (secondNum === 0) {
+            alert('На ноль делить нельзя');
+        } else {
+            alert(firstNum / secondNum);
+        }
+    } else {
+        alert('Неправильный знак');
     }
 } else {
-    alert('Одно из полей пустое');
+    alert('Не сработает');
 }
-
-switch (action) {
-    case '+':
-        result = num1 + num2;
-        break;
-    case '-':
-        result = num1 - num2;
-        break;
-    case '*':
-        result = num1 * num2;
-        break;
-    case '/':
-        if( num2 === 0 ) {
-            alert('На 0 делить нельзя')
-        } else {
-            result = num1 / num2;
-        }
-        break;
-}
-
-alert(result);

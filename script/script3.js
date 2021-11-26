@@ -1,11 +1,13 @@
-const number = +prompt( 'Введите число' );
-
-const notNaN = !isNaN(number);
+const number = prompt('Введите число');
 
 if (number) {
-    if (number % 2 === 0) {
-        alert ( 'Чётное' );
+
+    if (!isNaN(+number)) {
+        alert(number % 2 === 0 ? 'Число четное' : 'Число нечетное');
     } else {
-        alert ( 'Нечётное' );
+        alert( 'Значение должно быть числом' );
     }
+
+} else  {
+    alert('Не оставляйте пустую строку');
 }

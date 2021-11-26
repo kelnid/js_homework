@@ -1,11 +1,8 @@
 const first = +prompt('Введите первое число');
 const second = +prompt('Введите первое число');
 
-const notEmpty = first  && second;
-const notNaN = !isNaN(first) && !isNaN(second);
-
-if (notEmpty) {
-    if (notNaN) {
+if (first  && second) {
+    if (!isNaN(first) && !isNaN(second)) {
         if (second % first === 0) {
             alert( 'Кратное' );
         } else {

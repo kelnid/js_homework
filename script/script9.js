@@ -1,40 +1,35 @@
-while(true){
-    const money = +prompt( 'Введите сумму денег' );
+const money = +prompt( 'Введите сумму,которые хотите поставить' );
+const firstNumber = +prompt( 'Первое число' );
+const secondNumber = +prompt( 'Второе число' );
 
-    let a = +prompt( 'Введите первое значение для диапазона' );
+if (money && firstNumber && numberTwo ) {
+    if (Number.isInteger(firstNumber) && Number.isInteger(secondNumber) && Number.isInteger(money)) {
 
-    let b = +prompt( 'Введите второе значение для диапазона' );
+        const prize = (secondNumber - firstNumber) * 0.1 + money;
 
-    const sum = (b - a) * 0.1 + money;
-    alert(`Вы получите = ${sum}`);
+        if (firstNumber && secondNumber) {
+            alert( `Вы можете выиграть ${prize}` );
+        }
 
-    let num = +prompt('Введите число');
+        const putNumber = +prompt( 'Введите число, чтобы сыграть' );
 
-    while (num > b || num < a) {
-        num = +prompt(`Введите правильно число в диапазоне от ${a} то ${b}`);
+        if (putNumber >= firstNumber && putNumber <= secondNumber) {
+            const random = rand(firstNumber, secondNumber);
+
+            if (putNumber !== random) {
+                alert( `Kомпьютер выбрал ${random}, вы проиграли ${prize}` );
+            } else {
+                alert( `Поздравляю, вы выиграли ${prize}!` );
+            }
+        }
     }
-// проверка типов данных на пустые строки
 
-    const notEmpty = money  && a  && b  && num;
-    const notNaN = !isNaN(money) && !isNaN(a) && !isNaN(b) && !isNaN(num);
-
-    if (notEmpty && notNaN) {
-        break;
-    } else {
-        alert('Одно из введённых значений не валидно');
-    }
+} else {
+    alert( 'Так не пойдёт!' );
 }
 
 function rand(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min)) + min;
-}
-
-let rNum = rand(a , b)
-
-if (num !== rNum) {
-    alert(`Поздравляю, вы проиграли! Загаданное число было ${rNum}`);
-} else {
-    alert('Поздравляю, вы победили!');
 }
