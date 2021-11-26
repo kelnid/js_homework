@@ -1,5 +1,5 @@
-const first = +prompt('Введите первое число');
-const second = +prompt('Введите первое число');
+const first = +prompt( 'Введите первое число' );
+const second = +prompt( 'Введите первое число' );
 
 if (first  && second) {
     if (!isNaN(first) && !isNaN(second)) {
