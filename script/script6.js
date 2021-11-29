@@ -6,20 +6,18 @@ const numbers = {
     surname: undefined
 }
 
-function multiplyNumeric(obj) {
-    for (let key in obj) {
-        if (typeof obj[key] == 'number') {
-            obj[key] /= 2;
-            if (!Number.isInteger(obj[key])) {
-                obj[key] = Math.round(obj[key]);
-            }
-        } else if (typeof obj[key] == 'string') {
-            obj[key] = 'Hello, Palmo';
+function modifyObject(object) {
+    for (let key in object) {
+        if (isFinite(object[key])) {
+            object[key] = Math.round(object[key] / 2);
+        }
+        else if (typeof object[key] === 'string') {
+            object[key] = 'Hello, Palmo';
         } else {
-            delete obj[key];
+            delete object[key];
         }
     }
-    return obj;
+    return object;
 }
 
-console.log(multiplyNumeric(numbers));
+console.log(modifyObject(numbers));

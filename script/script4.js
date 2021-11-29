@@ -3,8 +3,8 @@ const user = {
     surname : "Smith"
 }
 
-function fullName(user) {
+function getFullName(user) {
     return user.name + ' ' + user.surname;
 }
 
-console.log(fullName(user));
+console.log(getFullName(user));

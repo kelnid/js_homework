@@ -1,11 +1,7 @@
-const number = +prompt( 'Write a number' );
+const number = prompt( 'Введите число для проверки' );
 
-function checkNumber () {
-    if (isNaN(number)) {
-        alert(Boolean(false));
-    } else {
-        alert(Boolean (true));
-    }
+function isEven(number) {
+    return number !== '' && isFinite(+number);
 }
 
-checkNumber();
+alert(isEven(number));

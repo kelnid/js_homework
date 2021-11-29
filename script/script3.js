@@ -1,12 +1,10 @@
-const user = {};
-
-user["name"] = "John";
-
-alert( isEmpty(user) ); // false
+const user = {
+    // name: 'John',
+    age: 30,
+};
 
 function isEmpty(obj) {
-    for (let key in obj) {
-        return false;
-    }
-    return true;
+    return 'name' in obj;
 }
+
+alert(isEmpty(user))
