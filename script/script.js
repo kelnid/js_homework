@@ -1,3 +1,5 @@
+// 1
+//
 // function upFirst(str) {
 //
 //     if (!str) {
@@ -13,8 +15,8 @@
 
 
 
-
-
+// 2
+//
 // function truncate(str, maxlength) {
 //
 //     return (str.length > maxlength) ? str.slice(0, maxlength - 1) + '…' : str;
@@ -25,8 +27,8 @@
 
 
 
-
-
+// 3
+//
 // let userName = 'Иванов Сергей Петрович';
 //
 // function getShortName(string) {
@@ -40,7 +42,8 @@
 // alert(getShortName(userName));
 
 
-
+// 4
+//
 // const users = [
 //     {
 //         id: 1,
@@ -72,7 +75,8 @@
 
 
 
-
+// 5
+//
 // const arrOne = ['Абрикос', 'Кокос', 'Посос'];
 // const arrTwo = ['Абрикос', 'Холодос', 'Посос'];
 //
@@ -87,7 +91,8 @@
 // console.log(getUnitedArr(arrOne, arrTwo));
 
 
-
+// 6
+//
 // const userSnakeName = 'super_user_name';
 //
 // function modifyToCamelCase (string) {
@@ -109,6 +114,7 @@
 // console.log(modifyToCamelCase(userSnakeName));
 
 
+// 7
 //
 // const calc = '5+10';
 //
@@ -122,6 +128,8 @@
 
 
 
+// 8
+//
 // const users = [
 //     {
 //         id: 1,
@@ -148,8 +156,8 @@
 
 
 
-
-
+// 9
+//
 // const users = [1, 'John', 20, 'Pete', 40];
 // function start(array) {
 //     return array.map(function (item) {
@@ -163,7 +171,11 @@
 
 
 
-/*const str = 'снюс снюс снюс снюс помидор помидор джон джон джон';
+/*
+10
+
+const str = 'снюс снюс снюс снюс помидор помидор джон джон джон';
+
 function checkSpam (sting) {
 
     const string = sting.trim().split(" ").map(function (item) {
@@ -183,7 +195,8 @@ function checkIfDuplicateExists(array) {
 console.log(checkSpam(str));
 */
 
-
+// 11
+//
 // const censoredWords = ['Помидор', 'Кошмар', 'Идиот', 'Жаба', 'Говнюк'];
 //
 // const line = 'жопа Помидор';
@@ -207,8 +220,8 @@ console.log(checkSpam(str));
 
 
 
-
-
+// 12
+//
 // const arrayToSentence = ['Привет', 1, null, 'как', {}, 'дела'];
 //
 // function get (array) {
@@ -226,6 +239,8 @@ console.log(checkSpam(str));
 
 
 
+// 13
+//
 // const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
 //
 // function createPhoneNumber (numbers) {
@@ -243,8 +258,8 @@ console.log(checkSpam(str));
 
 
 
-
-
+// 14
+//
 // const users = [
 //     {
 //         id: 1,
@@ -282,7 +297,8 @@ console.log(checkSpam(str));
 // console.log(getHighestSalary(users));
 
 
-
+// 15
+//
 // function checkString (string) {
 //
 //     let str = document.getElementById(string);
@@ -296,12 +312,14 @@ console.log(checkSpam(str));
 
 
 
+// 16
+//
 // function isCorrectString(str) {
 //     str = str.trim();
 //     return str && (str.length >= 3 && str.length <= 16) && isNotNumbers(str);
 // }
-
-
+//
+//
 // console.log(isCorrectString('фыasdadadadadadx'));
 //
 // function isCorrectPassword(password) {
@@ -318,9 +336,7 @@ console.log(checkSpam(str));
 //
 //     return true;
 // }
-
-
-
+//
 // function checkUpperSymbols (str) {
 //     for (let symbol of str) {
 //         if (symbol === symbol.toUpperCase() && !isFinite(+symbol)) {
@@ -331,8 +347,6 @@ console.log(checkSpam(str));
 //     return false;
 // }
 //
-//
 // console.log(isCorrectPassword('sada2A'));
-
 
 
