@@ -1,0 +1,139 @@
+.first_block {
+    margin-top: 50px;
+    width: 100px;
+    height: 100px;
+}
+.second_block {
+    width: 100px;
+    height: 100px;
+}
+.registration {
+    margin-top: 50px;
+}
+.container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 4px;
+    background-color: deepskyblue;
+    padding: 4px;
+    border-radius: 5px;
+    max-width: 360px;
+    margin: 100px auto;
+}
+.item {
+    background-color: lightcoral;
+    color: black;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    font-weight: bold;
+    cursor: pointer;
+}
+form {
+    max-width: 100%;
+    display: flex;
+}
+.input-pole {
+    width: 100%;
+    height: 60px;
+    border: none;
+    font-size: 30px;
+    outline: none;
+    text-align: right;
+}
+.input {
+    width: 100%;
+    height: 60px;
+    border: none;
+    font-size: 30px;
+    outline: none;
+    text-align: right;
+    grid-column: 1/-1;
+    padding: 0;
+}
+.clean {
+    grid-column: 1/3;
+    background-color: lightcoral;
+}
+.back {
+    grid-column: 3/-1;
+    background-color: lightcoral;
+}
+.zero {
+    grid-column: 1/3;
+}
+.equal {
+    grid-column: 4;
+    grid-row: 6/8;
+    background-color: lightcoral;
+}
+.form-block {
+    padding-top: 100px;
+    max-width: 360px;
+    margin: 0 auto;
+}
+.forms {
+    display: flex;
+    flex-direction: column;
+}
+
+#login, #email, #age, #password {
+    margin-bottom: 30px;
+}
+.basket {
+    max-width: 500px;
+    margin: 0 auto 250px;
+}
+/* Модальный (фон) */
+.modal {
+    display: none; /* Скрыто по умолчанию */
+    position: fixed; /* Оставаться на месте */
+    z-index: 1; /* Сидеть на вершине */
+    left: 0;
+    top: 0;
+    width: 100%; /* Полная ширина */
+    height: 100%; /* Полная высота */
+    overflow: auto; /* Включите прокрутку, если это необходимо */
+    background-color: rgb(0,0,0); /* Цвет запасной вариант */
+    background-color: rgba(0,0,0,0.4); /* Черный с непрозрачностью */
+}
+/* Модальное содержание/коробка */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% сверху и по центру */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 20%; /* Может быть больше или меньше, в зависимости от размера экрана */
+}
+/* Кнопка закрытия */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+.go_to_modal {
+    margin-top: 20px;
+}
+
+.first_image {
+    width: 50px;
+    height: 50px;
+}
+.main_try {
+    max-width: 500px;
+    width: 100%;
+    margin: 0 auto;
+}
+.item_box {
+    border: 2px solid black;
+    margin-bottom: 10px;
+}

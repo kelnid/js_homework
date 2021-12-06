@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+<div class="main_try">
+    <button id="button1">Нажми меня!</button>
+    <form>
+        <input type="text" id="part1">
+        <button type="button" onclick="myFunction()">Next</button>
+    </form>
+    <div>
+        <input type="text" value="hello" id="val">
+        <button type="button" onclick="getMeInput()">Next</button>
+    </div>
+    <div>
+        <input type="text" id="input1" value="Первый текст"/>
+        <input type="text" id="input2" value="Второй текст"/>
+        <button type="button" onclick="swapValues()">SWAP!</button>
+    </div>
+    <div>
+        <p id="p1">TEXT</p>
+        <button type="button" onclick="changeColor()">Change color</button>
+    </div>
+    <div>
+        <input type="text" value="hello" id="value2">
+        <button type="button" onclick="getDisable()">DISABLE</button>
+    </div>
+    <div>
+        <div class=first_block onclick="getSwapColors()"></div>
+        <div class=second_block onclick="getSwapColors()"></div>
+    </div>
+    <div>
+        <ol></ol>
+        <button type="button" onclick="addList()">Добавить элемент списка</button>
+    </div>
+    <div id="area-list">
+        <div id="area-list-sub">
+            <textarea name="Name" id="text" cols="30" rows="10">яблоко, груша, помидор, апельсин, манго</textarea>
+            <button id="butt5" onclick="getList()">Создать список</button>
+        </div>
+        <div id="lists"></div>
+    </div>
+</div>
+<div class="form-block">
+    <div class="success-alert"></div>
+    <div class="error-login"></div>
+    <div class="error-email"></div>
+    <div class="error-age"></div>
+    <div class="error-password"></div>
+    <form action="#" method="post" class="forms" id="fg">
+        <label for="login">Логин</label>
+        <input type="text" id="login" placeholder="Enter login" required>
+        <label for="email">Почта</label>
+        <input type="email" placeholder="Enter Email" id="email" name="email" required>
+        <label for="age">Возраст</label>
+        <input type="text" placeholder="Enter age" id="age" required>
+        <label for="password">Пароль</label>
+        <input type="password" placeholder="Enter password" id="password" required>
+        <button type="submit" id="butt-form">Register</button>
+    </form>
+</div>
+<div class="container">
+    <div class="item input">
+        <form name="form">
+            <input class="input-pole" type="text" name="textView" readonly>
+        </form>
+    </div>
+    <div class="item clean">C</div>
+    <div class="item back">&larr;</div>
+    <div class="item" onclick="insert('+')">+</div>
+    <div class="item" onclick="insert('-')">-</div>
+    <div class="item" onclick="insert('*')">&times;</div>
+    <div class="item" onclick="insert('/')">&divide;</div>
+    <div class="item" onclick="insert('7')">7</div>
+    <div class="item" onclick="insert('8')">8</div>
+    <div class="item" onclick="insert('9')">9</div>
+    <div class="item" onclick="insert('(')">(</div>
+    <div class="item" onclick="insert('4')">4</div>
+    <div class="item" onclick="insert('5')">5</div>
+    <div class="item" onclick="insert('6')">6</div>
+    <div class="item" onclick="insert(')')">)</div>
+    <div class="item" onclick="insert('1')">1</div>
+    <div class="item" onclick="insert('2')">2</div>
+    <div class="item" onclick="insert('3')">3</div>
+    <div class="item zero" onclick="insert('0')">0</div>
+    <div class="item" onclick="insert('.')">.</div>
+    <div class="item equal">=</div>
+</div>
+<div class="basket">
+    <div class="item_box">
+        <h3 class="item_title">Хомяк</h3>
+        <p>Цена: <span class="item_price">200</span>грн.</p>
+        <button class="add_item" data-id="7">Добавить в корзину</button>
+    </div>
+    <div class="item_box">
+        <h3 class="item_title">Кот</h3>
+        <p>Цена: <span class="item_price">300</span>грн.</p>
+        <button class="add_item" data-id="2">Добавить в корзину</button>
+    </div>
+    <div class="item_box">
+        <h3 class="item_title">Собака</h3>
+        <p>Цена: <span class="item_price">400</span>грн.</p>
+        <button class="add_item" data-id="5">Добавить в корзину</button>
+    </div>
+    <div class="go_to_modal">
+        <button id="myBtn"><img class="first_image" src="img/basket.png" alt="basket"></button>
+    </div>
+</div>
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <div id="checkout"></div>
+        <button id="clear_cart">Очистить корзину</button>
+        <button>Оформить заказ</button>
+        <div id="cart_content"></div>
+    </div>
+</div>
+<script src="script/script.js"></script>
+</body>
+</html>
