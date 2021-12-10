@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style/style.css">
+    <title>Online Shop</title>
+</head>
+<body>
+<div id="welcome" class="panel">
+    <p>Товар добавлен в корзину</p>
+</div>
+<div id="welcome2" class="panel">
+    <p>Товар добавлен в избранное</p>
+</div>
+<div class="container content-section">
+    <div class="main_buttons">
+        <button id="myBtn" class="btn btn-primary">Корзина</button>
+        <button id="myBtn2" class="btn btn-primary">Избранное</button>
+    </div>
+    <div class="search_div">
+        <input type="text" id="elastic" placeholder="Я ищу...">
+    </div>
+    <div>
+        <button class="btn btn-primary" id="sort-asc" onclick="mySort()">Сортировать по возрастанию</button>
+        <button class="btn btn-primary" id="sort-cas" onclick="mySortSecond()">Сортировать по убыванию</button>
+    </div>
+    <div class="shop-items"></div>
+</div>
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <section class="container content-section">
+            <h2 class="section-header">Корзина</h2>
+            <div class="cart-row">
+                <span class="cart-item cart-header cart-column">Товар</span>
+                <span class="cart-price cart-header cart-column">Цена</span>
+                <span class="cart-quantity cart-header cart-column">Количество</span>
+            </div>
+            <div class="cart-items"></div>
+            <div class="cart-total">
+                <strong class="cart-total-title">Итого</strong>
+                <span class="cart-total-price">$0</span>
+            </div>
+            <button class="btn btn-primary btn-purchase" type="button">Оформить заказ</button>
+        </section>
+    </div>
+</div>
+<div id="myModal2" class="modal2">
+    <div class="modal-content2">
+        <span class="close2">&times;</span>
+        <div class="container content-section">
+            <h2 class="section-header">Избранное</h2>
+            <div class="favourite-row">
+                <span class="favourite-item favourite-header favourite-column">Товар</span>
+                <span class="favourite-price favourite-header favourite-column">Цена</span>
+                <span class="favourite-quantity favourite-header favourite-column"></span>
+            </div>
+            <div class="favourite-items"></div>
+            <button class="btn btn-primary btn-purchase" id="btn-go-to-cart" onclick="" type="button">Перейти в корзину</button>
+        </div>
+    </div>
+</div>
+<script src="script/script.js"></script>
+</body>
+</html>
