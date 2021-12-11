@@ -1,5 +1,5 @@
 const products =
-    [{id: 1, name: 'Tequila', category: 'drink', image: 'images/cofee.png', price: '4.99'},
+    [{id: 1, name: 'Tequila', category: 'drink', image: 'images/cofee.png', price: '10.99'},
         {id: 2, name: 'Beer', category: 'drink', image: 'images/cofee.png', price: '5.99'},
         {id: 3, name: 'Burger', category: 'food', image: 'images/cofee.png', price: '7.99'},
         {id: 4, name: 'Shawarma', category: 'food', image: 'images/cofee.png', price: '10.99'},
@@ -11,7 +11,7 @@ const addProduct = document.querySelector('.shop-items');
 const favouriteItemsFromLocalStorage = JSON.parse(localStorage.getItem('favouriteItems'));
 
 function getHuet() {
-    for (let i = 0; i < products.length; i++) {
+        for (let i = 0; i < products.length; i++) {
         addProduct.insertAdjacentHTML(
             'beforeend',
             `<div class="shop-item" data-sort="${products[i].price}">
@@ -20,7 +20,7 @@ function getHuet() {
             <span class="shop-item-price">${products[i].price}$</span>
             <div class="shop-item-details">
                 <button class="btn btn-primary shop-item-button" type="button" onclick="getShow()">Добавить в корзину</button>
-                <button class="favourite-item-button btn btn-primary" type="button" product-id="${products[i].id}" onclick="getShowSecond(this)">Добавить в избранное</button>
+                <button class="favourite-item-button btn btn-primary" onclick = 'getShowDiv()' type="button" product-id="${products[i].id}" onclick="getShowSecond(this)">Добавить в избранное</button>
             </div>
         </div>`
         )}
@@ -268,12 +268,10 @@ function addItemToFavourite(title, price, imageSrc) {
 
     favouriteItems.append(favouriteRow);
 
-    favouriteRow.getElementsByClassName('shop-item-button')[0].addEventListener('click', addToCartClicked);
-
     favouriteRow.getElementsByClassName('btn-danger2')[0].addEventListener('click', removeFavouriteItem);
 
 }
-
+// поиска
 document.querySelector('#elastic').oninput = function () {
 
     const val = this.value.trim();
@@ -326,12 +324,6 @@ function getShow() {
         blockDiv.style.display = 'none';
     }, 2500);
 }
-
-if (favouriteItemsFromLocalStorage) {
-    for (let item of favouriteItemsFromLocalStorage) {
-        addItemToFavourite(item.name, item.price, item.image, item.id);
-    }
-}
 //добавление товаров в localstorage
 function getShowSecond(item) {
 
@@ -350,13 +342,20 @@ function getShowSecond(item) {
     favouriteItems.push(product);
 
     localStorage.setItem('favouriteItems', JSON.stringify(favouriteItems));
+}
 
+function getShowDiv () {
     blockDivSecond.style.display = 'block';
 
     setTimeout(function () {
         blockDivSecond.style.display = 'none';
     }, 2500);
+}
 
+if (favouriteItemsFromLocalStorage) {
+    for (let item of favouriteItemsFromLocalStorage) {
+        addItemToFavourite(item.name, item.price, item.image, item.id);
+    }
 }
 
 const modalSecond = document.getElementById('myModal2');
@@ -387,20 +386,29 @@ window.onclick = function (event) {
 }
 
 //сортировка по возрастанию
-function mySort() {
-
-    const shopItems = document.querySelector('.shop-items');
-
-    for (let i = 0; i < shopItems.children.length; i++) {
-        for (let j = i; j < shopItems.children.length; j++) {
-            if (+shopItems.children[i].getAttribute('data-sort') > +shopItems.children[j].getAttribute('data-sort')) {
-                replaceNode = shopItems.replaceChild(shopItems.children[j], shopItems.children[i]);
-                insertAfter(replaceNode, shopItems.children[i]);
-            }
-        }
+function getHuet2() {
+    const node = document.querySelector('.shop-items');
+    while (node.firstChild) {
+        node.removeChild(node.firstChild);
     }
+    products.sort(function(a, b){return a.price - b.price});
 
+    for (let i = 0; i < products.length; i++) {
+        addProduct.insertAdjacentHTML(
+            'beforeend',
+            `<div class="shop-item" data-sort="${products[i].price}">
+            <span class="shop-item-title">${products[i].name}</span>
+            <img class="shop-item-image" src=${products[i].image}>
+            <span class="shop-item-price">${products[i].price}$</span>
+            <div class="shop-item-details">
+                <button class="btn btn-primary shop-item-button" type="button" onclick="getShow()">Добавить в корзину</button>
+                <button class="favourite-item-button btn btn-primary" type="button" product-id="${products[i].id}" onclick="getShowSecond(this)">Добавить в избранное</button>
+            </div>
+        </div>`
+        )}
 }
+
+document.getElementById('sort-asc').onclick = getHuet2;
 
 function insertAfter(elem, refElem) {
     return refElem.parentNode.insertBefore(elem, refElem.nextSibling);
@@ -421,3 +429,18 @@ function mySortSecond() {
     }
 
 }
+
+// const generateCardProductFromFavourite = (img, title, price) => {
+//     return `
+//         <div class="cart-item cart-column">
+//             <img class="cart-item-image" src="${img}" width="100" height="100">
+//             <span class="cart-item-title">${title}</span>
+//         </div>
+//         <span class="cart-price cart-column">${price}</span>
+//         <div class="cart-quantity cart-column">
+//             <input class="cart-quantity-input" type="number" value="1">
+//             <button class="btn btn-danger" type="button">Удалить из корзины</button>
+//         </div>
+//     `;
+// }
+
