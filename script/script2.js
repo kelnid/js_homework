@@ -7,7 +7,7 @@ alert(message2);
 let name = prompt("Как вас зовут?", "");
 alert(`Вас зовут ${name}`);
 //classwork quest3
-var isYou = confirm("Кто вы?");
+let isYou = confirm("Кто вы?");
 alert( isYou );
 //classwork quest4
 let str = "12345";
